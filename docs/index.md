@@ -8,31 +8,32 @@ hide:
 Als je _Tailor_ nog niet hebt geïnstalleerd volg dan [deze instructies](#installatie-instructies-voor-tailor).
 
 
-## Measuring the motion of a pendulum with an ultrasonic distance detector
+## De beweging van een slinger meten met een ultrasone afstandssensor
 
-!!! abstract "Learning goal"
-    Experience Tailor's intuitive interface for changing initial parameters and visualizing their relevance to the physics of the model.
+!!! abstract "Leerdoel"
+    Ervaar Tailor's intuïtieve interface voor het veranderen van beginwaardes van parameters en het visualiseren van hun fysische betekenis in het model.
 
-For periodic functions it can be especially hard to find a working set of initial parameters for curve fitting to succeed. Using other tools, it can be a laborious exercise in trial-and-error. Tailor can show the initial fit in a semitransparent blue color. The initial fit responds to changes in the initial values of the parameters. Those values can be changed by editing the value field, using the little arrows next to the data field but also by placing the mouse cursor in the field and by using the mouse scroll gestures to change the values. Especially this last method makes it very intuitive to visualize the relevance of the different parameters to the physics of the model.
+Voor periodieke functies kan het lastig zijn om de beginwaardes van parameters als de frequentie of de amplitude zodanig te kiezen dat het model goed fit aan de datapunten. Met veel programma's is dit een kwestie van blijven proberen tot het lukt. Daarbij helpt het om goed naar de metingen te kijken en door bijvoorbeeld toppen te tellen en af te lezen de frequentie te schatten. Tailor kan een initiële fit laten zien in een lichtblauwe kleur. Wanneer beginwaardes worden veranderd past de curve zich automatisch aan. Je kunt daarvoor een nieuwe waarde intypen in het tekstveld, de pijltjes naast het veld gebruiken om hogere of lagere waardes te kiezen, of door met de muiscursor in het tekstveld te scrollen. Vooral die laatste manier is heel intuïtief en laat prachtig zien wat de invloed van de verschillende parameters is op het fysisch model.
+
 
 !!! exercise
-    Import the :fontawesome-solid-file-csv:`pendulum-USD.csv` data file into a clean project. Change the column names if you'd like. Create a plot of distance versus time and use a model similar to:
+    Importeer het :fontawesome-solid-file-csv:`pendulum-USD.csv`-bestand in een leeg project. Verander de kolomnamen als je dat fijn vindt. Maak een afstand-tijd-grafiek en fit aan een geschikt model, bijvoorbeeld:
     $$
     s = s_0 + A \sin(2\pi f t + \phi),
     $$
-    where distance $s$ and time $t$ should be the names of the data columns. Try to fit the model using the default initial values; that probably will not result in a good fit. Now play around with the initial values; you may need to enable `Show initial fit` again. How does changing a parameter affect the model curve? Try to get a good fit.
+    waar afstand $s$ en tijd $t$ gelijk moeten zijn aan de namen van de datakolommen. Probeer te fitten met de standaardwaardes van het model; dat geeft waarschijnlijk geen goed resultaat. Speel nu een beetje met de waardes; het kan zijn dat je `Show initial fit` weer even aan moet vinken. Hoe verandert het model als je een parameter aanpast? Probeer een goede fit te krijgen.
 
-    Data files:
+    Bestanden:
 
     * [:fontawesome-solid-file-csv: pendulum-USD.csv](data/pendulum-USD.csv)
 
 
-## X-ray fluorescence
+## Röntgenfluorescentie
 
-!!! abstract "Learning goal"
-    In this exercise you will learn that Tailor has no restrictions on which model you can fit. You can perform a more complex curve fitting procedure with, for example, multi-peak models. However, you must be very explicit about it.
-    
-Tailor has no library of included models. Each model that you want to fit has to be explicitly defined in the model function text area. That does make Tailor very flexible though. While tools like Excel can only fit a handful of models, more advanced tools like Origin Pro let you work with user-defined models. The distinction between predefined and user-defined models makes the interface harder to use while using predefined models can also make students a bit lazy. They switch models until one fits and they don't always understand the physics behind it. In Tailor, fitting a peak model like a Gaussian distribution requires students to look up the definition and enter the function explicitly.
+!!! abstract "Leerdoel"
+    In deze oefening zul je zien dat Tailor geen beperkingen heeft op welk model je wilt fitten. Je kunt complexe modellen fitten, zoals bijvoorbeeld _multipeak_-modellen. Deze vrijheid kent één nadeel: je moet je model heel precies invoeren.
+
+Tailor heeft geen bibliotheek van ingebouwde modellen. Elk model dat je wilt gebruiken zul je zelf expliciet in moeten vullen in het tekstveld. Dit maakt Tailor wel heel flexibel. Waar applicaties als _Excel_ slechts een handjevol modellen kunnen fitten, kunnen meer geavanceerde applicaties als _Origin Pro_ daarnaast ook zogenaamde _user-defined_ modellen gebruiken. Dat onderscheid maakt de gebruikersinterface ingewikkelder. Bovendien kan het gebruik van ingebouwde modellen leerlingen een beetje lui maken. Ze kiezen model na model tot er iets mooi fit aan de metingen zonder dat ze goed begrijpen welke natuurkunde hier achterzit. Met Tailor moeten leerlingen zelf nadenken over welke formule uit Binas ze willen gebruiken als model en deze expliciet invullen.
 
 !!! exercise
     The :fontawesome-solid-file-csv:`X-ray.csv` file contains data of an X-ray fluorescence experiment. Import it into a clean project and try to fit a peak model of your choice to determine the energy of the peak. Do you actually need to use a model that gives a good fit if you're only interested in the peak energy? Don't forget to include the uncertainties. Try to do the same with the :fontawesome-solid-file-csv:`X-ray-invar.csv` data file using a multi-peak model.
