@@ -91,6 +91,70 @@ Often, when performing computer measurements, it is difficult to let the measure
     * [:fontawesome-solid-file-csv: cart-dataset1.csv](data/cart-dataset1.csv)
     * [:fontawesome-solid-file-csv: cart-dataset2.csv](data/cart-dataset2.csv)
 
+## Examenopdracht 2023-I: Boomwhackers
+!!! abstract "Leerdoel"
+    Gebruik Tailor om een examenopdracht uit te voeren. 
+
+In examenopdrachten wordt data gepresenteerd wat gekoppeld is aan een experiment. Met behulp van Tailor kunnen studenten leren deze data te verwerken. We laten dit zien aan de hand van de [examenopdracht Boomwhackers uit 2023 tijdvak 1](https://www.examenblad.nl/system/files/2023/ex2023/VW-1023-a-23-1-o.pdf)
+
+!!! opdracht
+    ### Akoestische lengte
+    Boomwhackers zijn plastic buizen met aan beide kanten een opening waarmee je muziek kunt maken. Wanneer je een boomwhacker ergens tegenaan tikt, produceert dit geluid door de trillingen (staande golven) in de buis. Hoe lang de buis is, bepaalt welke toonhoogte er klinkt.
+    
+    Wanneer de grondtoon en boventonen van een buis worden gemeten, tonen deze kleine afwijkingen ten opzichte van de verwachte resultaten op basis van de buislengte. Dit verschil ontstaat doordat de knopen niet precies samenvallen met de uiteinden van de buis. De afstand tussen de knopen aan beide uiteinden van de buis staat bekend als de akoestische lengte. Deze akoestische lengte is dus bepalend voor de toonhoogte. 
+
+    De akoestische lengte wordt gegeven door:
+    $$
+    L_a = L + 2 * 0.31 * d,
+    $$
+    met $L_a$ de akoestische lengte van de buis in m, $L$ de werkelijke lengte van de buis in m, $0.31$ een experimenteel bepaalde correctiefactor, $d$ de binnendiameter van de buis in m, $2$ het aantal open uiteinde van de buis. 
+
+    1. Leg uit met behulp van bovenstaande formule of de buiken aan de uiteinden van de buis binnen of buiten de buis vallen.
+
+    ### Golflengte bepalen
+    De frequenties van de grondtoon van elke buis en de bijbehorende lengtes van de buizen zijn gegeven in :fontawesome-solid-file-csv:`boomwhackers_2023_1.csv`, de binnendiameter van de buizen blijkt na meting 4,0 cm te zijn.
+
+
+    1. Importeer het [:fontawesome-solid-file-csv: boomwhackers_2023_1.csv](data/boomwhackers_2023_1.csv)-bestand in een leeg project.
+    1. Bepaal de golflengte van de grondtoon op basis van de lengte van de buizen en zet deze in een aparte kolom in het Tailor project. 
+    
+    ### Meetonnauwkeurigheid toevoegen
+    De meetonnauwkeurigheid op de frequentie is $2*10^1$ Hz. 
+    
+    1. Voeg deze meetonnauwkeurigheid als een aparte kolom toe in het Tailor project.
+    1. Maak een afschatting van de meetonnauwkeurigheid op de golflengte en voeg deze toe in het Tailor project.
+    
+    ### Frequentie uitzetten tegen de golflengte
+    1. Maak een plot met op de x-as de golflengte en de bijbehordende meetonnauwkeurigheid en op de y-as de frequentie inclusief meetonnauwkeurigheid. 
+    1. Geef de assen correcte titels met grootheid en eenheid. Pas het bereik van de plot aan zodat de oorsprong zichtbaar is. 
+
+    ### Bepaal de geluidsnelheid
+    Met behulp van deze data is het mogelijk om de geluidsnelheid te bepalen. Daarvoor hebben we een model nodig die de data goed beschrijft. 
+
+    1. Met welk model kan de geluidsnelheid bepaald worden uit de plot? Vul in Tailor het model in. Gebruik 'v' als symbool voor de geluidsnelheid in het model. 
+    1. Geef onder het kopje 'Starting values and parameters bounds' aan wat redelijke waardes zijn voor de geluidsnelheid. Het linkervakje geeft de ondergrens aan, het middelste vakje is voor de verwachte waarde en het rechtervakje is voor de bovengrens.
+    1. Klik op (Re)Fit model om te zien welke waarde voor de geluidsnelheid het beste bij deze data past. Welke waarde wordt gegeven onder het kopje 'Fit parameters' in het blokje 'Information'?
+
+    ### Lineariseren
+    Van een rechte fit-lijn is het makkelijker om te zien hoe goed die bij de datapunten past (of niet) dan van een kromme lijn. Daarom willen we het gebruikte model omschrijven naar de vorm:
+
+    $$
+    f = iets*v,
+    $$
+
+    met f de frequentie in Hz en v de geluidsnelheid in m/s.
+
+    1. Wat is $iets$ in ons geval?
+    1. Maak in Tailor een nieuwe kolom en zet de data om zodat je een rechte lijn kunt trekken over de datapunten. 
+    1. Maak een nieuwe plot met op de x-as de omgezette data en op de y-as de frequentie. 
+    1. Vul het nieuwe model in en klik op 'Show initial fit'.
+    1. Vul voor de startwaarde van de geluidsnelheid een verwachte waarde in. 
+    1. Scroll in het vakje voor de startwaarde van de geluidsnelheid om de startwaarde aan te passen. Kijk naar de verandering van de blauwe lijn, wat is de minimale waarde en de maximale waarde die je voor de geluidsnelheid uit deze data kan verwachten?
+
+    Bestanden:
+
+    * [:fontawesome-solid-file-csv: boomwhackers_2023_1.csv](data/boomwhackers_2023_1.csv)
+
 
 ## Extras
 
