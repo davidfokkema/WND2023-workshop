@@ -3,7 +3,7 @@ hide:
   - navigation
 ---
 
-# BFY4 workshop on Tailor
+# Workshop: model-leren begint met een experiment
 
 The repository for Tailor can be found at [GitHub](https://github.com/davidfokkema/tailor) and the latest release can be downloaded [here](https://github.com/davidfokkema/tailor/releases/latest). Links to the individual binary installers:
 
