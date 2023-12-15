@@ -157,12 +157,12 @@ In examenopdrachten wordt data gepresenteerd wat gekoppeld is aan een experiment
     * [:fontawesome-solid-file-csv: boomwhackers_2023_1.csv](data/boomwhackers_2023_1.csv)
 
 
-## Extras
+## Extra
 
-!!! exercise
-    Can you determine the half-life of radon-220 using measurements of the activity of a freshly obtained sample of radon?
+!!! opdracht
+    Bepaal de halfwaardetijd van radon-220. Maak daarbij gebruik van de gemeten activiteit van een pas verkregen monster van radon.
 
-    Data files:
+    Bestanden:
 
     * [:fontawesome-solid-file-csv: radon220.csv](data/radon220.csv)
 
