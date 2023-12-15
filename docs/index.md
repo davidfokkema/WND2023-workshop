@@ -100,7 +100,7 @@ In examenopdrachten wordt data gepresenteerd wat gekoppeld is aan een experiment
 ## De beweging van een slinger meten met een ultrasone afstandssensor
 
 !!! abstract "Leerdoel"
-    Ervaar Tailor's intuïtieve interface voor het veranderen van beginwaardes van parameters en het visualiseren van hun fysische betekenis in het model.
+    Een afstandsdetector is een mooi hulpmiddel tijdens een praktische opdracht. Periodieke functies zijn echter vaak lastig te fitten _en_ leerlingen hebben vaak moeite met wat de verschillende parameters in het model betekenen. Visualiseren en uitproberen helpt daarbij!
 
 Voor periodieke functies kan het lastig zijn om de beginwaardes van parameters als de frequentie of de amplitude zodanig te kiezen dat het model goed fit aan de datapunten. Met veel programma's is dit een kwestie van blijven proberen tot het lukt. Daarbij helpt het om goed naar de metingen te kijken en door bijvoorbeeld toppen te tellen en af te lezen de frequentie te schatten. Tailor kan een initiële fit laten zien in een lichtblauwe kleur. Wanneer beginwaardes worden veranderd past de curve zich automatisch aan. Je kunt daarvoor een nieuwe waarde intypen in het tekstveld, de pijltjes naast het veld gebruiken om hogere of lagere waardes te kiezen, of door met de muiscursor in het tekstveld te scrollen. Vooral die laatste manier is heel intuïtief en laat prachtig zien wat de invloed van de verschillende parameters is op het fysisch model.
 
@@ -119,19 +119,19 @@ Voor periodieke functies kan het lastig zijn om de beginwaardes van parameters a
 ## Karretje over een wrijvingslozebaan
 
 !!! abstract "Leerdoel"
-    Ontdek een handige manier om met een paar keer klikken eenzelfde analyse uit te voeren op meerdere meting. 
-    En leer hoe je een model op slechts een gedeelte van de data kunt fitten. 
+    De wrijvingsloze baan &mdash; of _luchtkussenbaan_ &mdash; is in veel scholen wel te vinden, maar hoe ga je om met een beweging die _niet_ bij $t = 0$ start? Als je meer dan één dataset moet analyseren kan het handig zijn om niet alles steeds opnieuw te doen.
 
-In de praktijk wordt vaak een meting uitgevoerd en de data volledig geanalyseerd, waarna dezelfde analyse wordt toegepast op een tweede dataset. Omdat Tailor de 'calculated columns' en plots herlaad wanneer de data veranderd kunnen we deze handelingen snel in Tailor uitvoeren. Doe dit door het project onder een nieuwe naam op te slaan &mdash; door bijvoorbeeld `-dataset-2` aan de naam toe te voegen &mdash; en vervolgens de data van de oude meting te vervangen door de nieuwe dataset. Wanneer het data betreft van een computer gestuurde meeting is dit helemaal eenvoudig door het nieuwe CSV-bestand te importeren. Tailor zal in dat geval de kolommen met dezelfde naam overschrijven. Klik dan op `(Re)Fit model` in de plot en de resultaten voor de nieuwe meting zijn bekend. 
+!!! abstract "Eventueel: meerdere datasets analyseren"
+    In de praktijk wordt vaak een meting uitgevoerd en de data volledig geanalyseerd, waarna dezelfde analyse wordt toegepast op een tweede dataset. Omdat Tailor de 'calculated columns' en plots herlaad wanneer de data veranderd kunnen we deze handelingen snel in Tailor uitvoeren. Doe dit door het project onder een nieuwe naam op te slaan &mdash; door bijvoorbeeld `-dataset-2` aan de naam toe te voegen &mdash; en vervolgens de data van de oude meting te vervangen door de nieuwe dataset. Wanneer het data betreft van een computer gestuurde meeting is dit helemaal eenvoudig door het nieuwe CSV-bestand te importeren. Tailor zal in dat geval de kolommen met dezelfde naam overschrijven. Klik dan op `(Re)Fit model` in de plot en de resultaten voor de nieuwe meting zijn bekend. 
 
-Bij het importeren van data vanuit een CSV-bestand kan het voorkomen dat de kolomnamen niet handig dan wel logisch zijn. Het lijkt eenvoudig om dan de kolomnamen aan te passen, maar dit geeft problemen wanneer een nieuwe dataset wordt geïmporteerd in het oude project. Tailor zal de oude data niet overschrijven omdat de kolomnamen in de datasheet niet overeenkomen met de kolomnamen in het CSV-bestand. In plaats daarvan zal Tailor de nieuwe datakolommen toevoegen _voor_ de andere datakolommen. Met als gevolg dat er twee datasets in het project staan en de analyse niet automatisch wordt uitgevoerd op de nieuwe data. Daarom is het handig om de kolomnamen niet aan te passen maar om een nieuwe `calculated column` toe te voegen met de nieuwe naam en een verwijzing naar de originele naam als formule. De data wordt daarmee gekopieerd naar de nieuwe kolom en de nieuwe naam kan gebruikt worden in de plots en model functies. [^copied-columns]
+    Bij het importeren van data vanuit een CSV-bestand kan het voorkomen dat de kolomnamen niet handig dan wel logisch zijn. Het lijkt eenvoudig om dan de kolomnamen aan te passen, maar dit geeft problemen wanneer een nieuwe dataset wordt geïmporteerd in het oude project. Tailor zal de oude data niet overschrijven omdat de kolomnamen in de datasheet niet overeenkomen met de kolomnamen in het CSV-bestand. In plaats daarvan zal Tailor de nieuwe datakolommen toevoegen _voor_ de andere datakolommen. Met als gevolg dat er twee datasets in het project staan en de analyse niet automatisch wordt uitgevoerd op de nieuwe data. Daarom is het handig om de kolomnamen niet aan te passen maar om een nieuwe `calculated column` toe te voegen met de nieuwe naam en een verwijzing naar de originele naam als formule. De data wordt daarmee gekopieerd naar de nieuwe kolom en de nieuwe naam kan gebruikt worden in de plots en model functies. [^copied-columns]
 
-[^copied-columns]: Het is wellicht wat verwarrend, schroom niet om ons om hulp te vragen als het niet meteen duidelijk is.
+    [^copied-columns]: Het is wellicht wat verwarrend, schroom niet om ons om hulp te vragen als het niet meteen duidelijk is.
 
-Bij het uitvoeren van een computer gestuurde meting is het vaak lastig om het experiment precies op hetzelfde moment te laten starten en eindigen. Met als gevolg de fit uitgevoerd moet worden op slechts een gedeelte van de data. In de plot tab kan je daarvoor `Use domain` selecteren en daarbij het domein aangeven of door de randen van de blauwe vlak te slepen om de data te selecteren. 
+Bij het uitvoeren van een computer gestuurde meting is het vaak lastig om het experiment precies op hetzelfde moment te laten starten en eindigen. Met als gevolg de fit uitgevoerd moet worden op slechts een gedeelte van de data. In de plot tab kan je daarvoor `Use domain` selecteren en daarbij het domein aangeven of door de randen van de blauwe vlak te slepen om de data te selecteren. Ook zul je in met model een passing moeten doen zodat de meting niet op $t = 0$ hoeft te beginnen.
 
 !!! opdracht
-    Importeer het :fontawesome-solid-file-csv:`cart-dataset1.csv`-bestand en voeg nieuwe kolommen toe om afkortingen te definiëren voor de tijd en positie kolommen. Geef de nieuwe kolommen als naam $t$ and $s$. Voeg een kolom toe met 0.005 als meetonnauwkeurigheid voor $\delta s$. Plot $s$ tegen $t$ en fit een model voor constante snelheid aan het rechte deel van de data. Sla het bestand twee keer op onder verschillende namen voor dataset 1 _en_ dataset 2 &mdash; om te voorkomen dat de resultaten van de eerste analyse per ongeluk worden overschreven. Importeer nu de twee dataset en kies voor `Don't Save` wanneer een waarschuwing verschijnt over het verliezen van wijzigingen. Als alles goed gegaan is hoeft in de plot alleen het fit domein aangepast te worden en de fit opnieuw uitgevoerd om de resultaten voor de tweede dataset te verkrijgen. Sla het project opnieuw[^save] op om de nieuwe data en resultaten voor dataset 2 te bewaren. 
+    Importeer het :fontawesome-solid-file-csv:`cart-dataset1.csv`-bestand en voeg eventueel nieuwe kolommen toe om afkortingen te definiëren voor de tijd en positie kolommen. Geef de nieuwe kolommen als naam $t$ and $s$. Voeg een kolom toe met 0.005 als meetonnauwkeurigheid voor $\delta s$. Plot $s$ tegen $t$ en fit een model voor constante snelheid aan het rechte deel van de data. Sla het bestand twee keer op onder verschillende namen voor dataset 1 _en_ dataset 2 &mdash; om te voorkomen dat de resultaten van de eerste analyse per ongeluk worden overschreven. Importeer nu de tweede dataset en kies voor `Don't Save` wanneer een waarschuwing verschijnt over het verliezen van wijzigingen. Als alles goed gegaan is hoeft in de plot alleen het fit domein aangepast te worden en de fit opnieuw uitgevoerd om de resultaten voor de tweede dataset te verkrijgen. Sla het project opnieuw[^save] op om de nieuwe data en resultaten voor dataset 2 te bewaren. 
 
     [^save]: Gebruik nu `Save`, in plaats van `Save As`.
 
@@ -143,7 +143,7 @@ Bij het uitvoeren van een computer gestuurde meting is het vaak lastig om het ex
 
 ## Extra
 
-## Fotovoltaïsche cel (zonnecel)
+### Fotovoltaïsche cel (zonnecel)
 
 !!! abstract "Leerdoel"
     Soms meet je niet direct waarin je geïnteresseerd bent maar moet je de interesante grootheden afleiden uit je metingen. De zonnecel is welbekend, maar gedraagt zich _niet_ als een spanningsbron en _ook niet_ als een stroombron &mdash; lastig, maar leuk voor een profielwerkstuk!
@@ -164,7 +164,7 @@ In deze opdracht maken we gebruik van metingen die uitgevoerd zijn aan een fotov
     [^belasting]: Wanneer je een apparaat of, in dit geval, een weerstand aansluit op een spanningsbron dan _belast_ je de spanningsbron.
 
 
-## Röntgenfluorescentie
+### Röntgenfluorescentie
 
 !!! abstract "Leerdoel"
     In deze oefening zul je zien dat Tailor geen beperkingen heeft op welk model je wilt fitten. Je kunt complexe modellen fitten, zoals bijvoorbeeld _multipeak_-modellen. Deze vrijheid kent één nadeel: je moet je model heel precies invoeren.
