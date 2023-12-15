@@ -16,7 +16,7 @@ Als je _Tailor_ nog niet hebt geïnstalleerd volg dan [deze instructies](#instal
 Voor periodieke functies kan het lastig zijn om de beginwaardes van parameters als de frequentie of de amplitude zodanig te kiezen dat het model goed fit aan de datapunten. Met veel programma's is dit een kwestie van blijven proberen tot het lukt. Daarbij helpt het om goed naar de metingen te kijken en door bijvoorbeeld toppen te tellen en af te lezen de frequentie te schatten. Tailor kan een initiële fit laten zien in een lichtblauwe kleur. Wanneer beginwaardes worden veranderd past de curve zich automatisch aan. Je kunt daarvoor een nieuwe waarde intypen in het tekstveld, de pijltjes naast het veld gebruiken om hogere of lagere waardes te kiezen, of door met de muiscursor in het tekstveld te scrollen. Vooral die laatste manier is heel intuïtief en laat prachtig zien wat de invloed van de verschillende parameters is op het fysisch model.
 
 
-!!! exercise
+!!! opdracht
     Importeer het :fontawesome-solid-file-csv:`pendulum-USD.csv`-bestand in een leeg project. Verander de kolomnamen als je dat fijn vindt. Maak een afstand-tijd-grafiek en fit aan een geschikt model, bijvoorbeeld:
     $$
     s = s_0 + A \sin(2\pi f t + \phi),
@@ -35,38 +35,39 @@ Voor periodieke functies kan het lastig zijn om de beginwaardes van parameters a
 
 Tailor heeft geen bibliotheek van ingebouwde modellen. Elk model dat je wilt gebruiken zul je zelf expliciet in moeten vullen in het tekstveld. Dit maakt Tailor wel heel flexibel. Waar applicaties als _Excel_ slechts een handjevol modellen kunnen fitten, kunnen meer geavanceerde applicaties als _Origin Pro_ daarnaast ook zogenaamde _user-defined_ modellen gebruiken. Dat onderscheid maakt de gebruikersinterface ingewikkelder. Bovendien kan het gebruik van ingebouwde modellen leerlingen een beetje lui maken. Ze kiezen model na model tot er iets mooi fit aan de metingen zonder dat ze goed begrijpen welke natuurkunde hier achterzit. Met Tailor moeten leerlingen zelf nadenken over welke formule uit Binas ze willen gebruiken als model en deze expliciet invullen.
 
-!!! exercise
-    The :fontawesome-solid-file-csv:`X-ray.csv` file contains data of an X-ray fluorescence experiment. Import it into a clean project and try to fit a peak model of your choice to determine the energy of the peak. Do you actually need to use a model that gives a good fit if you're only interested in the peak energy? Don't forget to include the uncertainties. Try to do the same with the :fontawesome-solid-file-csv:`X-ray-invar.csv` data file using a multi-peak model.
+!!! opdracht
+    Het :fontawesome-solid-file-csv:`X-ray.csv`-bestand bevat metingen van een röntgenfluorescentie-experiment. Importeer het bestand in een leeg project and probeer een piekmodel van jouw keuze aan de metingen te fitten met het doel de energie van de piek te bepalen. Moet je per sé een model gebruiken die helemaal past als je alleen maar in de energie geïnteresseerd bent? Vergeet niet na te denken over de onzekerheid op de metingen. Probeer hetzelfde te doen voor het :fontawesome-solid-file-csv:`X-ray-invar.csv`-bestand met een _multipeak_-model.
 
-    Data files:
+    Bestanden:
 
     * [:fontawesome-solid-file-csv: X-ray.csv](data/X-ray.csv)
     * [:fontawesome-solid-file-csv: X-ray-invar.csv](data/X-ray-invar.csv)
 
 
-## Photovoltaic cell
+## Fotovoltaïsche cel (zonnecel)
 
-!!! abstract "Learning goal"
-    Learn to work with _calculated columns_ to let Tailor calculate additional physical quantities &mdash; including uncertainties &mdash; derived from the observed quantities.
+!!! abstract "Leerdoel"
+    Maak kennis met _calculated columns_ om Tailor extra fysische grootheden uit te laten rekenen &mdash; inclusief onzekerheden &mdash; die afgeleid zijn van gemeten grootheden.
 
-One of the key features of Tailor is the ability to work with calculated columns. It is very simple: a single function specifies the values for the full column. You can use the names of other columns as variables in the function. So, for instance, if you have two columns with the quantities _time_ $t$ and _velocity_ $s$, you can create a new calculated column _distance_ $s$ using:
+Eén van de belangrijkste mogelijkheden van Tailor is het werken met _calculated columns_. Het idee is eenvoudig: één wiskundige vergelijking berekent de waardes van de hele kolom. Je kunt de namen van andere kolommen gebruiken als variabelen in je functie. Als je bijvoorbeeld twee kolommen met de grootheden _tijd_ $t$ en _snelheid_ $v$ hebt dan kun je een nieuwe kolom _afstand_ $s$ definiëren met de functie:
 $$
 s = vt.
 $$
-Mind that all calculations are performed from left to right, so you can only use variables of columns defined _before_, or _to the left_, of the current column. Don't worry though, you can reorder columns by dragging their header to the left or right. In this exercise, we will use data of the performance of a photovoltaic cell that was collected during our _Experiment Control with Python Course_. Annelies Vlaar will present a poster on that subject during the poster session.
+De notatie die in Tailor gebruikt wordt is dezelfde als in Python. Je zult de vergelijking $vt$ in moeten vullen als: `v * t` en machten als $x^2$ als: `x ** 2`. Let op: alle kolommen worden van links naar rechts doorgerekend. Je kunt dus alleen variabelen gebruiken van kolommen die _eerder_, dus _links_, van je huidige kolom staan. Maar maak je geen zorgen: je kunt de volgorde van kolommen eenvoudig wijzigen door de kolomkoppen naar links of rechts te slepen. In deze opdracht maken we gebruik van metingen die uitgevoerd zijn aan een fotovoltaïsche cel in het kader van onze [_Experiment Control with Python Course_](https://natuurkundepracticumamsterdam.github.io/ecpc/).
 
-!!! exercise
-    Import the :fontawesome-solid-file-csv:`pvcell.csv` data file into a clean project. Here, $U_0$ is a control voltage[^voltage] used to vary the load on the photovoltaic cell. It has no simple relation to the precise value of the load and may be ignored. $U_1$ is the voltage across the photovoltaic cell and $U_2$ is the voltage across a 4.7 Ω shunt resistor in series with the load. Define new calculated columns to determine values for the current through the circuit and preferably its uncertainty. Inspect the relation of current versus voltage and, if you have time, fit the simplified model derived from the Shockley equation:
+!!! opdracht
+    Importeer het :fontawesome-solid-file-csv:`pvcell.csv`-bestand in een leeg project. De kolom $U_0$ is een stuurspanning die gebruikt wordt om de belasting[^belasting] van de fotovoltaïsche cel te variëren. Er is geen exacte relatie tussen de waarde van $U_0$ en de waarde van de belastingsweerstand en deze kolom mag je negeren. $U_1$ is de spanning over de fotovoltaïsche cel en $U_2$ is de spanning over een 4.7 Ω weerstand die in serie staat met de belasting. Maak nieuwe _calculated columns_ om de stroomsterkte door het circuit te berekenen en liefst ook de onzekerheid daar op &mdash; dit laatste is echter geen middelbare school-stof. Plot de relatie tussen de stroomsterkte en de spanning en probeer het volgende model te fitten, afgeleid van de Shockley vergelijking:
     $$
     I = I_\text{L} - I_0\left[\exp\left(\frac{U}{nU_\text{T}}\right) - 1\right],
     $$
-    with the current $I$, the photogenerated current $I_\text{L}$, the reverse saturation current $I_0$, the voltage across the PV cell $U$, and the thermal voltage $U_\text{T} = \frac{kT}{q}$.
+    met de stroomsterkte $I$, the fotostroom $I_\text{L}$, de sperverzadigingsstroom $I_0$, de spanning over de fotovoltaïsche cel $U$, en de thermische spanning $U_\text{T} = \frac{kT}{q}$.
 
-    Data files:
+    Bestanden:
 
     * [:fontawesome-solid-file-csv: pvcell.csv](data/pvcell.csv)
 
-    [^voltage]: The use of $U$ instead of $V$ for voltage seems to be a US/European difference of opinion. Sorry about that.
+    [^belasting]: Wanneer je een apparaat of, in dit geval, een weerstand aansluit op een spanningsbron dan _belast_ je de spanningsbron.
+
 
 ## Cart moving down a frictionless track
 
@@ -94,7 +95,7 @@ Often, when performing computer measurements, it is difficult to let the measure
 
 ## Extras
 
-!!! exercise
+!!! opdracht
     Can you determine the half-life of radon-220 using measurements of the activity of a freshly obtained sample of radon?
 
     Data files:
