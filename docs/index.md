@@ -128,15 +128,15 @@ In examenopdrachten wordt data gepresenteerd wat gekoppeld is aan een experiment
     1. Maak een afschatting van de meetonnauwkeurigheid op de golflengte en voeg deze toe in het Tailor project.
     
     ### Frequentie uitzetten tegen de golflengte
-    1. Maak een plot met op de x-as de golflengte en de bijbehordende meetonnauwkeurigheid en op de y-as de frequentie inclusief meetonnauwkeurigheid. 
+    1. Maak een plot met op de x-as de golflengte en de bijbehorende meetonnauwkeurigheid en op de y-as de frequentie inclusief meetonnauwkeurigheid. 
     1. Geef de assen correcte titels met grootheid en eenheid. Pas het bereik van de plot aan zodat de oorsprong zichtbaar is. 
 
     ### Bepaal de geluidsnelheid
     Met behulp van deze data is het mogelijk om de geluidsnelheid te bepalen. Daarvoor hebben we een model nodig die de data goed beschrijft. 
 
     1. Met welk model kan de geluidsnelheid bepaald worden uit de plot? Vul in Tailor het model in. Gebruik 'v' als symbool voor de geluidsnelheid in het model. 
-    1. Geef onder het kopje 'Starting values and parameters bounds' aan wat redelijke waardes zijn voor de geluidsnelheid. Het linkervakje geeft de ondergrens aan, het middelste vakje is voor de verwachte waarde en het rechtervakje is voor de bovengrens.
-    1. Klik op (Re)Fit model om te zien welke waarde voor de geluidsnelheid het beste bij deze data past. Welke waarde wordt gegeven onder het kopje 'Fit parameters' in het blokje 'Information'?
+    1. Geef onder het kopje `Starting values and parameters bounds` aan wat redelijke waardes zijn voor de geluidsnelheid. Het linkervakje geeft de ondergrens aan, het middelste vakje is voor de verwachte waarde en het rechtervakje is voor de bovengrens.
+    1. Klik op `(Re)Fit model` om te zien welke waarde voor de geluidsnelheid het beste bij deze data past. Welke waarde wordt gegeven onder het kopje `Fit parameters` in het blokje `Information`?
 
     ### Lineariseren
     Van een rechte fit-lijn is het makkelijker om te zien hoe goed die bij de datapunten past (of niet) dan van een kromme lijn. Daarom willen we het gebruikte model omschrijven naar de vorm:
@@ -150,7 +150,7 @@ In examenopdrachten wordt data gepresenteerd wat gekoppeld is aan een experiment
     1. Wat is $iets$ in ons geval?
     1. Maak in Tailor een nieuwe kolom en zet de data om zodat je een rechte lijn kunt trekken over de datapunten. 
     1. Maak een nieuwe plot met op de x-as de omgezette data en op de y-as de frequentie. 
-    1. Vul het nieuwe model in en klik op 'Show initial fit'.
+    1. Vul het nieuwe model in en klik op `Show initial fit`.
     1. Vul voor de startwaarde van de geluidsnelheid een verwachte waarde in. 
     1. Scroll in het vakje voor de startwaarde van de geluidsnelheid om de startwaarde aan te passen. Kijk naar de verandering van de blauwe lijn, wat is de minimale waarde en de maximale waarde die je voor de geluidsnelheid uit deze data kan verwachten?
 
