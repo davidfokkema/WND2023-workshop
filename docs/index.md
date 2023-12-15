@@ -69,25 +69,26 @@ Mind that all calculations are performed from left to right, so you can only use
 
     [^voltage]: The use of $U$ instead of $V$ for voltage seems to be a US/European difference of opinion. Sorry about that.
 
-## Cart moving down a frictionless track
+## Karretje over een wrijvingslozebaan
 
-!!! abstract "Learning goal"
-    In this exercise you will learn some tricks to perform a repeated analysis on a second measurement with just a few clicks. Also, you will fit a model to only a part of your data.
+!!! abstract "Leerdoel"
+    Ontdek een handige manier om met een paar keer klikken eenzelfde analyse uit te voeren op meerdere meting. 
+    En leer hoe je een model op slechts een gedeelte van de data kunt fitten. 
 
-It is not uncommon to perform a measurement, do a full analysis, and then want to redo that analysis on a second dataset. Since Tailor updates calculated columns and plots when data changes, this need not be hard. Simply save your project under a new name &mdash; for example appending `-dataset-2` to the name &mdash; and enter the data of the new measurement in place of the old. Even better, when using computer-controlled measurements, import the new CSV file. Tailor will overwrite columns with the same name. You then simply have to switch over to the plot and click the `(Re)Fit model` button.
+In de praktijk wordt vaak een meting uitgevoerd en de data volledig geanalyseerd, waarna dezelfde analyse wordt toegepast op een tweede dataset. Omdat Tailor de 'calculated columns' en plots herlaad wanneer de data veranderd kunnen we deze handelingen snel in Tailor uitvoeren. Doe dit door het project onder een nieuwe naam op te slaan &mdash; door bijvoorbeeld `-dataset-2` aan de naam toe te voegen &mdash; en vervolgens de data van de oude meting te vervangen door de nieuwe dataset. Wanneer het data betreft van een computer gestuurde meeting is dit helemaal eenvoudig door het nieuwe CSV-bestand te importeren. Tailor zal in dat geval de kolommen met dezelfde naam overschrijven. Klik dan op `(Re)Fit model` in de plot en de resultaten voor de nieuwe meting zijn bekend. 
 
-It is important to realize that if you had renamed your data columns Tailor will be confused as to which columns to overwrite. Tailor will add new data columns _before_ other data columns in your sheet and will not overwrite other columns. The best approach in such cases is not to rename columns but to add a new calculated column with the desired name and the original name as its formula. The data will be copied to the new column and you can use the desired names in your plots and model functions. Importing a new dataset will overwrite the original columns and these values will again be copied over to the other columns.[^copied-columns]
+Bij het importeren van data vanuit een CSV-bestand kan het voorkomen dat de kolomnamen niet handig dan wel logisch zijn. Het lijkt eenvoudig om dan de kolomnamen aan te passen, maar dit geeft problemen wanneer een nieuwe dataset wordt geïmporteerd in het oude project. Tailor zal de oude data niet overschrijven omdat de kolomnamen in de datasheet niet overeenkomen met de kolomnamen in het CSV-bestand. In plaats daarvan zal Tailor de nieuwe datakolommen toevoegen _voor_ de andere datakolommen. Met als gevolg dat er twee datasets in het project staan en de analyse niet automatisch wordt uitgevoerd op de nieuwe data. Daarom is het handig om de kolomnamen niet aan te passen maar om een nieuwe `calculated column` toe te voegen met de nieuwe naam en een verwijzing naar de originele naam als formule. De data wordt daarmee gekopieerd naar de nieuwe kolom en de nieuwe naam kan gebruikt worden in de plots en model functies. [^copied-columns]
 
-[^copied-columns]: You can ask help if this part was confusing.
+[^copied-columns]: Het is wellicht wat verwarrend, schroom niet om ons om hulp te vragen als het niet meteen duidelijk is.
 
-Often, when performing computer measurements, it is difficult to let the measurements start and end at the exact times you perform the experiment. In that case you want to fit only part of your data. You can select `Use domain` on the plot tab and specify precise start and end values or drag the edges of the blue region to match the data.
+Bij het uitvoeren van een computer gestuurde meting is het vaak lastig om het experiment precies op hetzelfde moment te laten starten en eindigen. Met als gevolg de fit uitgevoerd moet worden op slechts een gedeelte van de data. In de plot tab kan je daarvoor `Use domain` selecteren en daarbij het domein aangeven of door de randen van de blauwe vlak te slepen om de data te selecteren. 
 
-!!! exercise
-    Import the :fontawesome-solid-file-csv:`cart-dataset1.csv` and create new columns to define short-hand names for the time and position columns. Call them $t$ and $s$, for example. Add a column to define a value of 0.005 for the uncertainty $\delta s$. Plot $s$ versus $t$ and fit a constant-velocity model to the straight part of the data. Save your project twice under different names for dataset 1 _and_ dataset 2 &mdash; to avoid accidentally overwriting results of the first analysis. Now you can import the second dataset choosing `Don't Save` when warned about losing changes. If all went well, you now only have to adjust the fit domain and redo the fit to obtain new results for the seconds dataset. Save the project again[^save] to commit the new data and results to the project for dataset 2.
+!!! opdracht
+    Importeer het :fontawesome-solid-file-csv:`cart-dataset1.csv`-bestand en voeg nieuwe kolommen toe om afkortingen te definiëren voor de tijd en positie kolommen. Geef de nieuwe kolommen als naam $t$ and $s$. Voeg een kolom toe met 0.005 als meetonnauwkeurigheid voor $\delta s$. Plot $s$ tegen $t$ en fit een model voor constante snelheid aan het rechte deel van de data. Sla het bestand twee keer op onder verschillende namen voor dataset 1 _en_ dataset 2 &mdash; om te voorkomen dat de resultaten van de eerste analyse per ongeluk worden overschreven. Importeer nu de twee dataset en kies voor `Don't Save` wanneer een waarschuwing verschijnt over het verliezen van wijzigingen. Als alles goed gegaan is hoeft in de plot alleen het fit domein aangepast te worden en de fit opnieuw uitgevoerd om de resultaten voor de tweede dataset te verkrijgen. Sla het project opnieuw[^save] op om de nieuwe data en resultaten voor dataset 2 te bewaren. 
 
-    [^save]: Using `Save`, not `Save As`.
+    [^save]: Gebruik nu `Save`, in plaats van `Save As`.
 
-    Data files:
+    Bestanden:
 
     * [:fontawesome-solid-file-csv: cart-dataset1.csv](data/cart-dataset1.csv)
     * [:fontawesome-solid-file-csv: cart-dataset2.csv](data/cart-dataset2.csv)
