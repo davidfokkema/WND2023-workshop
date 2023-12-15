@@ -5,9 +5,10 @@ hide:
 
 # Workshop: model-leren begint met een experiment
 
+Op deze webpagina vind je verschillende opdrachten om metingen te vergelijken met modellen. Hierbij komen verschillende mogelijkheden van Tailor voorbij waarbij we zoveel mogelijk hebben geprobeerd om aan te sluiten bij de onderwijspraktijk van practica en praktische opdrachten. We hebben Tailor ook gebruikt tijdens het begeleiden van profielwerkstukken &mdash; meest recent drie leerlingen die op de VU verschillende metingen gedaan hebben met een Michelsoninterferometer.
+
 Als je _Tailor_ nog niet hebt geïnstalleerd volg dan [deze instructies](#installatie-instructies-voor-tailor).
 
-This document contains several exercises to explore the features of Tailor and experience its ease-of-use. Special care was given to try and showcase those features which make Tailor ideally suited for data analysis in an educational setting. All analysis tools should incur only low cognitive load and should ideally be directly usable without reading a long manual.
 
 ## De beweging van een slinger meten met een ultrasone afstandssensor
 
@@ -15,7 +16,6 @@ This document contains several exercises to explore the features of Tailor and e
     Ervaar Tailor's intuïtieve interface voor het veranderen van beginwaardes van parameters en het visualiseren van hun fysische betekenis in het model.
 
 Voor periodieke functies kan het lastig zijn om de beginwaardes van parameters als de frequentie of de amplitude zodanig te kiezen dat het model goed fit aan de datapunten. Met veel programma's is dit een kwestie van blijven proberen tot het lukt. Daarbij helpt het om goed naar de metingen te kijken en door bijvoorbeeld toppen te tellen en af te lezen de frequentie te schatten. Tailor kan een initiële fit laten zien in een lichtblauwe kleur. Wanneer beginwaardes worden veranderd past de curve zich automatisch aan. Je kunt daarvoor een nieuwe waarde intypen in het tekstveld, de pijltjes naast het veld gebruiken om hogere of lagere waardes te kiezen, of door met de muiscursor in het tekstveld te scrollen. Vooral die laatste manier is heel intuïtief en laat prachtig zien wat de invloed van de verschillende parameters is op het fysisch model.
-
 
 !!! opdracht
     Importeer het :fontawesome-solid-file-csv:`pendulum-USD.csv`-bestand in een leeg project. Verander de kolomnamen als je dat fijn vindt. Maak een afstand-tijd-grafiek en fit aan een geschikt model, bijvoorbeeld:
@@ -93,6 +93,7 @@ Bij het uitvoeren van een computer gestuurde meting is het vaak lastig om het ex
 
     * [:fontawesome-solid-file-csv: cart-dataset1.csv](data/cart-dataset1.csv)
     * [:fontawesome-solid-file-csv: cart-dataset2.csv](data/cart-dataset2.csv)
+
 
 ## Examenopdracht 2023-I: Boomwhackers
 !!! abstract "Leerdoel"
@@ -174,6 +175,6 @@ In examenopdrachten wordt data gepresenteerd wat gekoppeld is aan een experiment
 Tailor is als repository te vinden op [GitHub](https://github.com/davidfokkema/tailor) en de laatste versie kan [hier](https://github.com/davidfokkema/tailor/releases/latest) gedownload worden. Links naar de verschillende installatieprogramma's:
 
 * [Windows](https://github.com/davidfokkema/tailor/releases/download/v1.8.0/Tailor-1.8.0.msi)
-* [Intel Macs (older Macs)](https://github.com/davidfokkema/tailor/releases/download/v1.8.0/Tailor-1.8.0_intel.dmg)
-* [Apple Silicon (newer Macs)](https://github.com/davidfokkema/tailor/releases/download/v1.8.0/Tailor-1.8.0_apple_silicon.dmg)
+* [Intel Macs (oudere Macs)](https://github.com/davidfokkema/tailor/releases/download/v1.8.0/Tailor-1.8.0_intel.dmg)
+* [Apple Silicon (Macs met M1-processor of nieuwer)](https://github.com/davidfokkema/tailor/releases/download/v1.8.0/Tailor-1.8.0_apple_silicon.dmg)
 
