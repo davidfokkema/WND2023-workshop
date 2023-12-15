@@ -7,8 +7,6 @@ hide:
 
 Als je _Tailor_ nog niet hebt geïnstalleerd volg dan [deze instructies](#installatie-instructies-voor-tailor).
 
-This document contains several exercises to explore the features of Tailor and experience its ease-of-use. Special care was given to try and showcase those features which make Tailor ideally suited for data analysis in an educational setting. All analysis tools should incur only low cognitive load and should ideally be directly usable without reading a long manual.
-
 Op deze webpagina vind je verschillende opdrachten om metingen te vergelijken met modellen. Hierbij komen verschillende mogelijkheden van Tailor voorbij waarbij we zoveel mogelijk hebben geprobeerd om aan te sluiten bij de onderwijspraktijk van practica en praktische opdrachten. We hebben Tailor ook gebruikt tijdens het begeleiden van profielwerkstukken &mdash; meest recent drie leerlingen die op de VU verschillende metingen gedaan hebben met een Michelsoninterferometer.
 
 
